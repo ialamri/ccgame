@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C QUEST</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/tcc-wasm/dist/tcc.js"></script>
+
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <span>C QUEST</span>
+    </div>
+
+    <div class="header-center">
+        <!-- <div class="level">
+            LEVEL <strong>01</strong>
+        </div> -->
+        <div class="level">
+    <span>LEVEL</span>
+    <select id="levelSelect" onchange="loadLevel(parseInt(this.value))">
+        <!-- Level options will be dynamically loaded from levels.js -->
+    </select>
+</div>
+<!--          -->
+        <div class="progress">
+            <div></div>
+        </div>
+        <span style="color: var(--muted); font-size: 12px;">
+            1 / 10
+        </span>
+    </div>
+
+    <button class="reset-top" onclick="resetGame()">
+        ↻ Reset
+    </button>
+</header>
+
+<main>
+    <!-- CODE EDITOR PANEL -->
+    <section class="panel editor">
+        <div class="panel-header">
+            <div class="panel-title">
+                <span class="dot"></span>
+                C CODE
+            </div>
+            <span style="color: var(--muted); font-size: 12px;">
+                main.c
+            </span>
+        </div>
+
+        <div class="editor-body">
+            <div class="line-numbers" id="lineNumbers">1</div>
+            <textarea id="code" spellcheck="false">#include <stdio.h>
+#include "quest.h"
+
+int main(void) {
+    int steps = 5;
+
+    while (steps > 0) {
+        move_forward();
+        steps--;
+    }
+
+    turn_right();
+    printf("Robot finished moving!\n");
+
+    return 0;
+}
+</textarea>
+        </div>
+
+        <div class="editor-footer">
+            <span class="keyboard-tip">
+                Tip: Write C code and press Run
+            </span>
+            <button class="run-button" onclick="runCode()">
+                ▶ Run
+            </button>
+        </div>
+    </section>
+
+    <!-- GAME WORLD PANEL -->
+    <section class="panel game-panel">
+        <div class="panel-header">
+            <div class="panel-title">
+                <span class="dot"></span>
+                GAME WORLD
+            </div>
+            <div style="display:flex; gap:14px; color:var(--muted); font-size:12px;">
+                <span id="stepsDisplay">Position: 3, 1</span>
+                <span id="movesDisplay">Steps: 0</span>
+                <span id="crashesDisplay">Crashes: 0</span>
+            </div>
+            <span id="scoreDisplay" style="color: var(--yellow); font-size: 12px; margin-left: 15px;">
+                Score: 0
+            </span>
+        </div>
+
+        <div class="mission">
+            <h2 class="mission-title">
+                Move the Robot
+            </h2>
+            <p class="mission-description">
+                Your robot needs to reach the green flag. Use a loop to move it forward.
+            </p>
+        </div>
+
+        <div class="world">
+            <div class="grid" id="grid"></div>
+        </div>
+    </section>
+
+    <!-- CONSOLE AND HINTS -->
+    <div class="bottom">
+        <section class="panel console">
+            <div class="panel-header">
+                <div class="panel-title">
+                    CONSOLE
+                </div>
+                <div class="console-tabs">
+                    <button class="console-tab active" onclick="switchConsole('game')" id="gameTab">
+                        GAME LOG
+                    </button>
+                    <button class="console-tab" onclick="switchConsole('c')" id="cTab">
+                        C OUTPUT
+                    </button>
+                </div>
+            </div>
+
+            <!-- GAME LOG CONSOLE VIEW -->
+            <div class="console-body console-view active" id="gameConsole"></div>
+
+            <!-- C PROGRAM OUTPUT CONSOLE VIEW -->
+            <div class="console-body console-view" id="cConsole"></div>
+        </section>
+
+        <section class="panel hint">
+            <div class="panel-header">
+                <div class="panel-title">
+                    💡 HINT
+                </div>
+            </div>
+            <div class="hint-body">
+                <p class="hint-text" id="hintText"></p>
+                <div class="hint-navigation">
+                    <button class="hint-button" onclick="previousHint()">&lt;</button>
+                    <span id="hintCounter">1 / 2</span>
+                    <button class="hint-button" onclick="nextHint()">&gt;</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<script src="levels.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
