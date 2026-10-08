@@ -820,8 +820,8 @@ main {
     }
 
     .grid {
-        grid-template-columns: repeat(7, 40px);
-        grid-template-rows: repeat(5, 40px);
+        grid-template-columns: repeat(7, 40px) !important;
+        grid-template-rows: repeat(5, 40px) !important;
         gap: 4px;
     }
 
