@@ -83,7 +83,7 @@ function populateLevelSelect() {
         const option = document.createElement("option");
         option.value = index;
         const formattedIndex = String(index + 1).padStart(2, '0');
-        option.textContent = `${formattedIndex}: ${level.title || 'Untitled'}`;
+        option.textContent = `Lvl ${formattedIndex}: ${level.title || 'Untitled'}`;
         selectEl.appendChild(option);
     });
 }
