@@ -691,55 +691,6 @@ main {
     background: #202e48;
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 950px) {
-    main {
-        grid-template-columns: 1fr;
-    }
-
-    .bottom {
-        grid-column: auto;
-
-        grid-template-columns: 1fr;
-    }
-
-    .header-center {
-        display: none;
-    }
-}
-
-@media (max-width: 600px) {
-    header {
-        padding: 0 15px;
-    }
-
-    main {
-        padding: 12px;
-    }
-
-    .grid {
-        grid-template-columns: repeat(7, 40px);
-        grid-template-rows: repeat(5, 40px);
-        gap: 4px;
-    }
-
-    .cell {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-
-    .world {
-        padding: 15px;
-        overflow: auto;
-    }
-
-    .keyboard-tip {
-        display: none;
-    }
-}
-
 .console-tabs {
     display: flex;
     align-items: center;
@@ -839,4 +790,58 @@ main {
 .level select option {
     background-color: #1e1e2e;
     color: #ffffff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 950px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom {
+        grid-column: auto;
+
+        grid-template-columns: 1fr;
+    }
+
+    .header-center {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 0 15px;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(7, 40px);
+        grid-template-rows: repeat(5, 40px);
+        gap: 4px;
+    }
+
+    .cell {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .world {
+        padding: 15px;
+        overflow: auto;
+    }
+
+    .keyboard-tip {
+        display: none;
+    }
+    .level select {
+	    padding: 0px;
+	    font-size: 0.85rem;
+	    font-weight: initial;
+    }
 }
