@@ -805,14 +805,14 @@ main {
         grid-template-columns: 1fr;
     }
 
-    .header-center {
+    .progress {
         display: none;
     }
 }
 
 @media (max-width: 600px) {
-    progress {
-        padding: 0 15px;
+    header {
+        padding: 0 5px;
     }
 
     main {
