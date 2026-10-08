@@ -811,7 +811,7 @@ main {
 }
 
 @media (max-width: 600px) {
-    header {
+    progress {
         padding: 0 15px;
     }
 
@@ -839,6 +839,9 @@ main {
     .keyboard-tip {
         display: none;
     }
+	.level {
+	padding: 8px 5px;
+	}
     .level select {
 	    padding: 0px;
 	    font-size: 0.85rem;
