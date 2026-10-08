@@ -7,7 +7,7 @@
 const LEVELS = [
     {
         id: 1,
-        title: "LEVEL 01: The Beginning",
+        title: "The Beginning",
         mode: "robot",
         rows: 5,
         cols: 7,
@@ -30,7 +30,7 @@ const LEVELS = [
     },
     {
         id: 2,
-        title: "LEVEL 02: Turning Corners",
+        title: "Turning Corners",
         mode: "robot",
         rows: 6,
         cols: 6,
@@ -53,7 +53,7 @@ const LEVELS = [
     },
     {
         id: 3,
-        title: "LEVEL 03: Tic-Tac-Toe vs Robot (3x3 2D Array)",
+        title: "Tic-Tac-Toe",
         mode: "xo",
         rows: 3,
         cols: 3,
