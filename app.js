@@ -177,6 +177,7 @@ function createGrid() {
         }
     } else {
         grid.classList.remove("xo-grid");
+        grid.className = "grid";
     }
 
     // grid.style.gridTemplateColumns = `repeat(${COLS}, 58px)`;
