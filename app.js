@@ -154,7 +154,8 @@ function createGrid() {
     grid.innerHTML = "";
 
     if (currentMode === "xo") {
-        grid.classList.add("xo-grid");
+        // grid.classList.add("xo-grid");
+        grid.className = "xo-grid";
 
         // Check whether the player declared a 3x3 2D array in C
         const isArrayDeclared = has3x3ArrayDeclaration();
@@ -178,8 +179,8 @@ function createGrid() {
         grid.classList.remove("xo-grid");
     }
 
-    grid.style.gridTemplateColumns = `repeat(${COLS}, 58px)`;
-    grid.style.gridTemplateRows = `repeat(${ROWS}, 58px)`;
+    // grid.style.gridTemplateColumns = `repeat(${COLS}, 58px)`;
+    // grid.style.gridTemplateRows = `repeat(${ROWS}, 58px)`;
 
     for (let r = 0; r < ROWS; r++) {
         for (let c = 0; c < COLS; c++) {
