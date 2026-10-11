@@ -785,7 +785,7 @@ main {
     background-color: #1e1e2e;
     color: #ffffff;
 }
-.grid xo-grid{
+.xo-locked-notice{
 	text-align: center;
 }
 .lock-icon{
