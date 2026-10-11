@@ -396,25 +396,42 @@ main {
     background-size: 32px 32px;
 }
 
+xo-grid,
 .grid {
     display: grid;
+    gap: var(--grid-gap, 4px);
+    min-width: 0;
+}
 
-    /* إتاحة التحكم بالأعمدة والصفوف عبر JavaScript */
-    grid-template-columns: repeat(var(--cols, 7), 58px);
-    grid-template-rows: repeat(var(--rows, 5), 58px);
+.xo-grid {
+    --grid-gap: 4px;
 
-    gap: 5px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+
+    width: min(100%, 182px);
+    aspect-ratio: 1 / 1;
+}
+
+.grid {
+    --grid-gap: 5px;
+    --cell-size: clamp(28px, 7vw, 58px);
+
+    grid-template-columns:
+        repeat(var(--cols, 7), minmax(0, var(--cell-size)));
+    grid-template-rows:
+        repeat(var(--rows, 5), minmax(0, var(--cell-size)));
+
+    gap: var(--grid-gap);
     padding: 8px;
 
     background: #0a101d;
-
     border: 1px solid #293955;
     border-radius: 12px;
-
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
 
-    /* يضمن انكماش إطار الشبكة ليتناسب مع عدد الخلايا بالضبط */
     width: fit-content;
+    max-width: 100%;
     height: fit-content;
     margin: 0 auto;
 }
