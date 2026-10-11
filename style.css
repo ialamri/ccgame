@@ -401,7 +401,7 @@ main {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(3, minmax(0, 1fr));
     gap: 4px;
-    width: min(100%, 182px);
+    /* width: min(100%, 182px); */
     aspect-ratio: 1 / 1;
     margin: 0 auto;
 }
