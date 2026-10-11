@@ -165,6 +165,7 @@ function createGrid() {
         if (!isArrayDeclared) {
             // grid.style.gridTemplateColumns = "1fr";
             // grid.style.gridTemplateRows = "1fr";
+			setGridSize(grid, 0, 0);
 
             const lockedNotice = document.createElement("div");
             lockedNotice.className = "xo-locked-notice";
@@ -177,10 +178,11 @@ function createGrid() {
             updateStatsDisplay();
             return;
         }
+		setGridSize(grid, ROWS, COLS);
+		
     } else {
         grid.classList.remove("xo-grid");
-        grid.style.setProperty("--rows", ROWS);
-		grid.style.setProperty("--cols", COLS);
+        setGridSize(grid, ROWS, COLS);
     }
 
     // grid.style.gridTemplateColumns = `repeat(${COLS}, 58px)`;
