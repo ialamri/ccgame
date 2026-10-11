@@ -161,8 +161,8 @@ function createGrid() {
         const isArrayDeclared = has3x3ArrayDeclaration();
 
         if (!isArrayDeclared) {
-            grid.style.gridTemplateColumns = "1fr";
-            grid.style.gridTemplateRows = "1fr";
+            // grid.style.gridTemplateColumns = "1fr";
+            // grid.style.gridTemplateRows = "1fr";
 
             const lockedNotice = document.createElement("div");
             lockedNotice.className = "xo-locked-notice";
