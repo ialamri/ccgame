@@ -396,7 +396,7 @@ main {
     background-size: 32px 32px;
 }
 
-xo-grid,
+.xo-grid,
 .grid {
     display: grid;
     gap: var(--grid-gap, 4px);
