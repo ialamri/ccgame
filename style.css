@@ -785,7 +785,12 @@ main {
     background-color: #1e1e2e;
     color: #ffffff;
 }
-
+.grid xo-grid{
+	text-align: center;
+}
+.lock-icon{
+	font-size: xx-large;
+}
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 950px) {
