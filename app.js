@@ -147,6 +147,11 @@ function resetGame(showMessage = true) {
     }
 }
 
+function setGridSize(grid, rows, cols) {
+    grid.style.setProperty("--rows", rows);
+    grid.style.setProperty("--cols", cols);
+}
+
 function createGrid() {
     const grid = document.getElementById("grid");
     if (!grid) return;
