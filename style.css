@@ -396,20 +396,10 @@ main {
     background-size: 32px 32px;
 }
 
-.xo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-    gap: 4px;
-    /* width: min(100%, 182px); */
-    aspect-ratio: 1 / 1;
-    margin: 0 auto;
-}
-
 .grid {
     display: grid;
-    grid-template-columns: repeat(var(--cols, 7), 58px);
-    grid-template-rows: repeat(var(--rows, 5), 58px);
+    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+    grid-template-rows: repeat(var(--rows), minmax(0, 1fr));
     gap: 5px;
     padding: 8px;
     background: #0a101d;
